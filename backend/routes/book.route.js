@@ -132,12 +132,12 @@ router.route("/books/edit/:id").put(getLoggedinUser, upload.single("image"), asy
     genre: req.body.genre
   }
 
-  if (req.file) { // If there is new image
-    updateBook.image = {
-      data: req.file.buffer,
-      contentType: req.file.mimetype
-    }
-  }
+  // if (req.file) { // If there is new image
+  //   updateBook.image = {
+  //     data: req.file.buffer,
+  //     contentType: req.file.mimetype
+  //   }
+  // }
 
   res.loggedinUser.books.forEach((userBook, index) => {
     if (userBook._id.toString() === req.params.id) {
